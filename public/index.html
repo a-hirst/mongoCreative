@@ -1,0 +1,26 @@
+<html>
+<head>
+  <title>Recipes</title>
+  <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.19/angular.min.js"></script>
+  <script src="javascripts/app.js"></script>
+</head>
+<body ng-app="recipe" ng-controller="RecipeCtrl">
+  <h1>Recipes</h1>
+  <form ng-submit="addRecipe()">
+  Title: <input type="text" ng-model="formTitle"></input><br/>
+  Category: <input type="text" ng-model="formCategory"></input><br/>
+  Ingredients: <textarea rows="8" cols="30" ng-model="formIngredients" 
+    style="margin-right: 10px"></textarea>
+  Instructions: <textarea rows="8" cols="30" ng-model="formInstructions"></textarea><br/>
+  <button type="submit">Add Recipe</button>
+  </form>
+  <br/>
+  <div ng-repeat="recipe in recipes" style="width: 300px; min-height:250px; margin:10px; 
+                border:1px solid gray; border-radius:8px; padding: 10px; display: inline-block">
+  <h2>{{recipe.title}}</h2>
+  <h3>Category: {{recipe.category}}</h3>
+  <div>Ingredients: <br/>{{recipe.ingredients}} </div>
+  <div>Instructions: <br/>{{recipe.instructions}} </div>
+  </div>
+</body>
+</html>
