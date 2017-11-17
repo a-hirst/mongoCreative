@@ -5,22 +5,31 @@
   <script src="javascripts/app.js"></script>
 </head>
 <body ng-app="recipe" ng-controller="RecipeCtrl">
-  <h1>Recipes</h1>
-  <form ng-submit="addRecipe()">
-  Title: <input type="text" ng-model="formTitle"></input><br/>
-  Category: <input type="text" ng-model="formCategory"></input><br/>
-  Ingredients: <textarea rows="8" cols="30" ng-model="formIngredients" 
-    style="margin-right: 10px"></textarea>
-  Instructions: <textarea rows="8" cols="30" ng-model="formInstructions"></textarea><br/>
-  <button type="submit">Add Recipe</button>
+  <h1 style="text-align: center">Recipes</h1>
+  <form ng-submit="addRecipe()" style="padding: 10px; width: 70%; margin-left: auto; 
+        margin-right: auto; border: 3px solid lightgray; border-radus:10px">
+Title:<br> <input type="text" ng-model="formTitle"></input><br/>
+  Category:<br> <input type="text" ng-model="formCategory"></input><br/>
+  Ingredients:<br> <textarea rows="4" cols="60" ng-model="formIngredients" 
+    style="margin-right: 10px"></textarea><br>
+  Instructions: <br><textarea rows="4" cols="60" ng-model="formInstructions"></textarea><br/>
+  <button type="submit" style="    padding: 10px;
+    margin: 3px;
+    background: lightsteelblue;
+    border: 1px solid steelblue;
+    border-radius: 5px;
+    color: midnightblue;
+    width: 150px;">Add Recipe</button>
   </form>
   <br/>
+  <div style="width: 1030px; margin-left: auto; margin-right: auto">
   <div ng-repeat="recipe in recipes" style="width: 300px; min-height:250px; margin:10px; 
                 border:1px solid gray; border-radius:8px; padding: 10px; display: inline-block">
   <h2>{{recipe.title}}</h2>
   <h3>Category: {{recipe.category}}</h3>
   <div>Ingredients: <br/>{{recipe.ingredients}} </div>
   <div>Instructions: <br/>{{recipe.instructions}} </div>
+  </div>
   </div>
 </body>
 </html>
